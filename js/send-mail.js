@@ -11,12 +11,13 @@ $(function() {
 			var formValues = $(this).serialize();
 			
 			$.post($(this).attr('action'), formValues, function(data){
-				setTimeout(function(){ 
+			}).done(function() {
+    			setTimeout(function(){ 
 					hideLoader();
 					contactForm.find('.submit-area').removeClass('loading').addClass("success"); 
 					contactForm.clearForm(); 
 					},1000);
-			});
+  			});
 		}
 		return false
 	});
