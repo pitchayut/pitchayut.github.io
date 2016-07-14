@@ -11,7 +11,7 @@ $(function() {
 			var formValues = $(this).serialize();
 			
 			$.post($(this).attr('action'), formValues, function(data){
-			}).done(function() {
+			}).always(function() {
     			setTimeout(function(){ 
 					hideLoader();
 					contactForm.find('.submit-area').removeClass('loading').addClass("success"); 
